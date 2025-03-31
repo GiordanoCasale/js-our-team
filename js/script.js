@@ -41,11 +41,11 @@ const createMembersCard = (members) => {
   const card = `<div class="col-12 col-md-6 col-lg-4">
                     <div class="team-card mt-5">
                         <div class="card d-flex flex-row ">
-                            <img src="${members.img}" class="img-fluid">
+                            <img src="${members.img}" class>
                             <div>
-                                <h3 class="mb-1 mt-3" id="nome">${members.name}</h3>
-                                <p class="mb-1" id="ruolo">${members.role}</p>
-                                <p class="mb-0" id="email">${members.email}</p>
+                                <h3 class="mb-1 mt-3 ms-2" id="nome">${members.name}</h3>
+                                <p class="mb-1 ms-2" id="ruolo">${members.role}</p>
+                                <p class="mb-0 ms-2" id="email"><a href="#">${members.email}</a></p>
                             </div>
                         </div>
                     </div>
