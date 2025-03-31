@@ -36,4 +36,24 @@ const teamMembers = [
     img: "img/female3.png"
   }
 ];
+//funzione che mi crea la singola card del membro
+const createMembersCard = (members) => {
+  const card = ` <div class="col-12 col-md-6 col-lg-4">
+                    <div class="team-card mt-5">
+                        <div class="card d-flex flex-row ">
+                            <img src="./img/${members.image}">
+                            <div>
+                                <h3 class="mb-1 mt-3" id="nome">${members.name}</h3>
+                                <p class="mb-1" id="ruolo">${members.role}</p>
+                                <p class="mb-0" id="email">${members.email}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
 
+  document.getElementById("team-members").innerHTML += card;
+}
+
+for (let i = 0; i < teamMembers.length; i++) {
+  createMembersCard(teamMembers[i]);
+}
