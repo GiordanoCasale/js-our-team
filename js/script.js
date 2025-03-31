@@ -38,10 +38,10 @@ const teamMembers = [
 ];
 //funzione che mi crea la singola card del membro
 const createMembersCard = (members) => {
-  const card = ` <div class="col-12 col-md-6 col-lg-4">
+  const card = `<div class="col-12 col-md-6 col-lg-4">
                     <div class="team-card mt-5">
                         <div class="card d-flex flex-row ">
-                            <img src="./img/${members.image}">
+                            <img src="${members.img}" class="img-fluid">
                             <div>
                                 <h3 class="mb-1 mt-3" id="nome">${members.name}</h3>
                                 <p class="mb-1" id="ruolo">${members.role}</p>
@@ -49,11 +49,24 @@ const createMembersCard = (members) => {
                             </div>
                         </div>
                     </div>
-                </div>`;
+                 </div>`;
 
-  document.getElementById("team-members").innerHTML += card;
+  return card
 }
 
-for (let i = 0; i < teamMembers.length; i++) {
-  createMembersCard(teamMembers[i]);
+//funziona che mi renderizza il contenuto dell'array
+const renderTeam = () => {
+  //dichiaro una varaibile con valore stringa vuota che conterrà tutte le colonne da mostrare
+  let cards = "";
+
+  for (let i = 0; i < teamMembers.length; i++) {
+    cards += createMembersCard(teamMembers[i]);
+  }
+
+  document.getElementById("team-members").innerHTML = cards
+
+
 }
+
+renderTeam()
+
